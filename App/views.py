@@ -17,15 +17,16 @@ class CrudApiView(APIView):
         return JsonResponse({"data": user_list})
     def post(self, request):
         data = request.data
-        username=data.get('username')
-        email=data.get('email')
-        password=data.get('password')
-        user_object = User.objects.create(
-            username=username,
-            email=email,
-            password=password
-        )
-        data["id"]=user_object.id
+        print(data)
+        # username=data.get('username')
+        # email=data.get('email')
+        # password=data.get('password')
+        # user_object = User.objects.create(
+        #     username=username,
+        #     email=email,
+        #     password=password
+        # )
+        # data["id"]=user_object.id
         return JsonResponse({"data": data})
     
     def put(self, request, pk):
